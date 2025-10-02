@@ -12,7 +12,7 @@ from livekit.plugins import (
 )
 from livekit.plugins import google
 from livekit.plugins.turn_detector.multilingual import MultilingualModel
-
+from tools import get_news
 load_dotenv(".env")
 
 
@@ -26,6 +26,7 @@ class Assistant(Agent):
                 temperature=0.8,
                 api_key="AIzaSyBEXrD5URUyt3U55MtpLLBH8aPPJLttPJI",
             ),
+            tools=[get_news],
         )
 
 
